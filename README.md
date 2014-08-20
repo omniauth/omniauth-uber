@@ -21,7 +21,7 @@ Then `bundle install`.
 
 ## Usage
 
-`OmniAuth::Strategies::Uber` is simply a Rack middleware. Read the OmniAuth 1.0 docs for detailed instructions: https://github.com/intridea/omniauth.
+`OmniAuth::Strategies::Uber` is simply Rack middleware. Read the OmniAuth 1.0 docs for detailed instructions: https://github.com/intridea/omniauth.
 
 Here's a quick example, adding the middleware to a Rails app in `config/initializers/omniauth.rb`:
 
