@@ -31,8 +31,8 @@ get '/auth/:name/callback' do
     >> UID
       #{auth.uid.inspect}
 
-    >> ACCESS TOKEN
-      #{auth.credentials.token.inspect}
+    >> CREDENTIALS
+      #{auth.credentials.inspect}
 
     >> INFO
       #{auth.info.inspect}

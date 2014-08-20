@@ -35,13 +35,19 @@ end
 
 Currently, there is only one configuration option that needs to be set:
 
-* `scope`: A comma-separated list of permissions you want to request from the user. The available permissions are as follows: `access_email`, `access_phone`, `access_balance`, `access_feed`, `access_profile`, `access_friends`, and `make_payments`.  Default: `access_profile`
+* `scope`: A comma-separated list of permissions you want to request from the user. The available permissions are as follows: `profile`, `history`.  Default: `profile`
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :uber, ENV['UBER_CLIENT_ID'], ENV['UBER_CLIENT_SECRET'], :scope => 'profile,history'
 end
+
 ```
+
+## Scope Details
+
+* `profile`:	Access the basic profile information on a user's Uber account including their first name, email address, and profile picture.
+* `history`:	Pull trip data including the locations, times, and product type of a user's historical pickups and drop-offs.
 
 ## Auth Hash
 
@@ -50,20 +56,33 @@ Here's an example *Auth Hash* available in `request.env['omniauth.auth']`:
 ```ruby
 {
   :provider => 'uber',
-  :uid => nil,
-  :info => {}, # Being worked on
+  :uid => 'xxxxxx-yyyyy-zzzz-aaaa-bbbbbbbbbb',
+  :info => {
+    :email => 'foo@bar.com',
+    :first_name => 'Tom',
+    :last_name => 'Milewski',
+    :picture => 'https://d1w2poirtb3as9.cloudfront.net/default.jpeg',
+    :promo_code => 'xxxxx',
+  },
   :credentials => {
     :token => 'ABCDEF...',
+    :refresh_token => 'ABCDEF...',
     :expires => true
   },
-  :extra => {}  # Being worked on
+  :extra => {
+    :email => 'foo@bar.com',
+    :first_name => 'Tom',
+    :last_name => 'Milewski',
+    :picture => 'https://d1w2poirtb3as9.cloudfront.net/default.jpeg',
+    :promo_code => 'xxxxx',
+    :uuid => 'xxxxxx-yyyyy-zzzz-aaaa-bbbbbbbbbb'
   }
 }
 ```
 
 ## Supported Ruby Versions
-`omniauth-uber` is tested under 1.8.7, 1.9.2, 1.9.3, 2.0.0, JRuby (1.8 mode), and Rubinius
-(1.8 and 1.9 modes).
+`omniauth-uber` is tested under 1.9.2, 1.9.3, 2.0.0, 2.1.0, MRI Ruby HEAD, JRuby (1.9 mode and HEAD), and Rubinius
+(2.0 mode).
 
 ## Versioning
 This library aims to adhere to [Semantic Versioning 2.0.0][semver]. Violations
@@ -83,7 +102,7 @@ Constraint][pvc] with two digits of precision. For example:
 
 ## License
 
-Copyright (c) 2013 by Tom Milewski
+Copyright (c) 2014 by Tom Milewski
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
