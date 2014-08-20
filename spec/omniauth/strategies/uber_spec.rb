@@ -14,15 +14,15 @@ describe OmniAuth::Strategies::Uber do
     end
 
     it 'should have correct site' do
-      expect(subject.options.client_options.site).to eq('https://login.uber.com')
+      expect(subject.options.client_options.site).to eq('https://api.uber.com')
     end
 
     it 'should have correct authorize url' do
-      expect(subject.options.client_options.authorize_url).to eq('/oauth/authorize')
+      expect(subject.options.client_options.authorize_url).to eq('https://login.uber.com/oauth/authorize')
     end
 
     it 'should have correct access token url' do
-      expect(subject.options.client_options.token_url).to eq('/oauth/token')
+      expect(subject.options.client_options.token_url).to eq('https://login.uber.com/oauth/token')
     end
 
     it 'should indicate that the provider ignores the state parameted' do

@@ -27,7 +27,7 @@ end
 get '/auth/:name/callback' do
   auth = request.env['omniauth.auth']
 
-  puts %Q(
+  puts %(
     >> UID
       #{auth.uid.inspect}
 

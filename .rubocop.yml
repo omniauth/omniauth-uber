@@ -78,3 +78,7 @@ RaiseArgs:
 
 TrailingComma:
   Enabled: false
+
+Style/FileName:
+  Exclude:
+    - 'lib/omniauth-uber.rb'
