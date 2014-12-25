@@ -3,7 +3,8 @@ require 'spec_helper'
 describe OmniAuth::Strategies::Uber do
   subject do
     @subject ||= begin
-      args = ['client_id', 'client_secret', @options || {}].compact
+      @options ||= {}
+      args = ['client_id', 'client_secret', @options].compact
       OmniAuth::Strategies::Uber.new(*args)
     end
   end
