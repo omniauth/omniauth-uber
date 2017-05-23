@@ -35,11 +35,11 @@ end
 
 Currently, there is only one configuration option that needs to be set:
 
-* `scope`: A comma-separated list of permissions you want to request from the user. The available permissions are as follows: `profile`, `history`.  Default: `profile`
+* `scope`: A *space separated* list of permissions you want to request from the user (e.g: `profile history request`). All scopes documented by *Uber* are working. Default: `profile`
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :uber, ENV['UBER_CLIENT_ID'], ENV['UBER_CLIENT_SECRET'], :scope => 'profile,history'
+  provider :uber, ENV['UBER_CLIENT_ID'], ENV['UBER_CLIENT_SECRET'], :scope => 'profile history'
 end
 
 ```
@@ -48,7 +48,9 @@ end
 
 * `profile`:	Access the basic profile information on a user's Uber account including their first name, email address, and profile picture.
 * `history`:	Pull trip data including the locations, times, and product type of a user's historical pickups and drop-offs.
-
+* `request`: Allow for trip requests 
+* ... see *Uber* developer documentation for more scopes
+* 
 ## Auth Hash
 
 Here's an example *Auth Hash* available in `request.env['omniauth.auth']`:
