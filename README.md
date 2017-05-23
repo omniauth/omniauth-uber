@@ -48,43 +48,42 @@ end
 
 * `profile`:	Access the basic profile information on a user's Uber account including their first name, email address, and profile picture.
 * `history`:	Pull trip data including the locations, times, and product type of a user's historical pickups and drop-offs.
-* `request`: Allow for trip requests 
+* `request`: Allow for trip requests
 * ... see *Uber* developer documentation for more scopes
-* 
+*
 ## Auth Hash
 
 Here's an example *Auth Hash* available in `request.env['omniauth.auth']`:
 
 ```ruby
 {
-  :provider => 'uber',
-  :uid => 'xxxxxx-yyyyy-zzzz-aaaa-bbbbbbbbbb',
-  :info => {
-    :email => 'foo@bar.com',
-    :first_name => 'Tom',
-    :last_name => 'Milewski',
-    :picture => 'https://d1w2poirtb3as9.cloudfront.net/default.jpeg',
-    :promo_code => 'xxxxx',
+  provider: 'uber',
+  uid: 'xxxxxx-yyyyy-zzzz-aaaa-bbbbbbbbbb',
+  info: {
+    email: 'foo@bar.com',
+    first_name: 'Tom',
+    last_name: 'Milewski',
+    picture: 'https://d1w2poirtb3as9.cloudfront.net/default.jpeg',
+    promo_code: 'xxxxx',
   },
-  :credentials => {
-    :token => 'ABCDEF...',
-    :refresh_token => 'ABCDEF...',
-    :expires => true
+  credentials: {
+    token: 'ABCDEF...',
+    refresh_token: 'ABCDEF...',
+    expires: true
   },
-  :extra => {
-    :email => 'foo@bar.com',
-    :first_name => 'Tom',
-    :last_name => 'Milewski',
-    :picture => 'https://d1w2poirtb3as9.cloudfront.net/default.jpeg',
-    :promo_code => 'xxxxx',
-    :uuid => 'xxxxxx-yyyyy-zzzz-aaaa-bbbbbbbbbb'
+  extra: {
+    email: 'foo@bar.com',
+    first_name: 'Tom',
+    last_name: 'Milewski',
+    picture: 'https://d1w2poirtb3as9.cloudfront.net/default.jpeg',
+    promo_code: 'xxxxx',
+    uuid: 'xxxxxx-yyyyy-zzzz-aaaa-bbbbbbbbbb'
   }
 }
 ```
 
 ## Supported Ruby Versions
-`omniauth-uber` is tested under 1.9.2, 1.9.3, 2.0.0, 2.1.0, MRI Ruby HEAD, JRuby (1.9 mode and HEAD), and Rubinius
-(2.0 mode).
+`omniauth-uber` is tested under 2.2.6, 2.3.3, 2.4.1, and ruby-head.
 
 ## Versioning
 This library aims to adhere to [Semantic Versioning 2.0.0][semver]. Violations
@@ -104,7 +103,7 @@ Constraint][pvc] with two digits of precision. For example:
 
 ## License
 
-Copyright (c) 2014 by Tom Milewski
+Copyright (c) 2014-2017 by Tom Milewski
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
