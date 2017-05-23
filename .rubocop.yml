@@ -3,3 +3,7 @@ inherit_from:
 
 Style/FileName:
   Enabled: false
+
+AllCops:
+  Exclude:
+    - 'tmp/**/*'
