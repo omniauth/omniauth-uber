@@ -1,8 +1,8 @@
 omniauth-uber
 ==============
 
-[![Gem Version](https://badge.fury.io/rb/omniauth-uber.png)](http://badge.fury.io/rb/omniauth-uber)
-[![Build Status](https://travis-ci.org/tmilewski/omniauth-uber.png?branch=master)](https://travis-ci.org/tmilewski/omniauth-uber)
+[![Gem Version](https://badge.fury.io/rb/omniauth-uber.svg)](http://badge.fury.io/rb/omniauth-uber)
+[![Build Status](https://travis-ci.org/omniauth/omniauth-uber.svg?branch=master)](https://travis-ci.org/omniauth/omniauth-uber)
 
 Uber OAuth2 Strategy for OmniAuth 1.x and supports the OAuth 2.0 server-side flow.
 
