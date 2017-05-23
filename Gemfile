@@ -7,10 +7,10 @@ group :development do
 end
 
 group :test do
-  gem 'coveralls', :require => false
+  gem 'coveralls', require: false
   gem 'rack-test'
   gem 'rspec', '~> 3.1.0'
-  gem 'simplecov', :require => false
+  gem 'simplecov', require: false
 end
 
 gemspec
