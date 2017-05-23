@@ -50,7 +50,7 @@ end
 * `history`:	Pull trip data including the locations, times, and product type of a user's historical pickups and drop-offs.
 * `request`: Allow for trip requests
 * ... see *Uber* developer documentation for more scopes
-*
+
 ## Auth Hash
 
 Here's an example *Auth Hash* available in `request.env['omniauth.auth']`:
